@@ -24,6 +24,17 @@ $(document).ready(function(){
             }
         }
     });
+    $('#togglePassword').on('click', function() {
+        const passwordField = $('#senha');
+        const passwordFieldType = passwordField.attr('type');
+        if (passwordFieldType === 'password') {
+            passwordField.attr('type', 'text');
+            $(this).text('Esconder');
+        } else {
+            passwordField.attr('type', 'password');
+            $(this).text('Mostrar');
+        }
+    });
 });
 
 function toggleEmpregadoFields() {
