@@ -3,120 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário PDF</title>
+    <title>Formulário</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Formulário de Dados</h1>
-        <form id="dataForm" class="mt-4">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="nome">Nome:</label>
-                    <input type="text" class="form-control" id="nome" name="nome" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="rg">RG:</label>
-                    <input type="text" class="form-control" id="rg" name="rg" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="cpf">CPF:</label>
-                    <input type="text" class="form-control" id="cpf" name="cpf" required>
-                    <small id="cpfError" class="form-text text-danger d-none">CPF inválido!</small>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="telefone">Telefone:</label>
-                    <input type="text" class="form-control" id="telefone" name="telefone" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">Email:</label>
-                    <input type="text" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="senhaINSS">Senha do INSS:</label>
-                    <input type="text" class="form-control" id="senhaINSS" name="senhaINSS" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="cep">CEP:</label>
-                    <input type="text" class="form-control" id="cep" name="cep" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="numero">Número da Casa:</label>
-                    <input type="text" class="form-control" id="numero" name="numero" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="empregado" name="empregado">
-                        <label class="form-check-label" for="empregado">Empregado</label>
+        <form id="mainForm">
+            <div class="card mb-3">
+                <div class="card-header">Campo Dados</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
                     </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="feminino" name="feminino">
-                        <label class="form-check-label" for="feminino">Feminino</label>
+                    <div class="form-group">
+                        <label for="rg">RG</label>
+                        <input type="text" class="form-control" id="rg" name="rg">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="datanascimento">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="datanascimento" name="datanascimento">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="beneficio">Tipo do Benefício Solicitado</label>
+                        <select class="form-control" id="beneficio" name="beneficio">
+                            <option>Auxílio Doença</option>
+                            <option>Auxílio Doença Acidentario</option>
+                            <option>Auxílio Acidente</option>
+                            <option>Auxílio Acidente Acidentario</option>
+                            <option>Aposentadoria por Invalidez</option>
+                            <option>Aposentadoria por Invalidez Acidentario</option>
+                            <option>Reabilitação Profissional</option>
+                            <option>Aposentadoria por Tempo de Contribuição</option>
+                            <option>Aposentadoria por Tempo de Contribuição por Deficiencia</option>
+                            <option>Aposentadoria Especial</option>
+                            <option>Aposentadoria por Idade</option>
+                            <option>Revisão de Aposentadoria</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" id="masculino" value="Masculino" checked>
+                            <label class="form-check-label" for="masculino">
+                                Masculino
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" id="feminino" value="Feminino">
+                            <label class="form-check-label" for="feminino">
+                                Feminino
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="empresa">Nome da Empresa:</label>
-                    <input type="text" class="form-control" id="empresa" name="empresa" required>
+            <div class="card mb-3">
+                <div class="card-header">Campo Contato</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" name="telefone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="profissao">Profissão:</label>
-                    <input type="text" class="form-control" id="profissao" name="profissao" required>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">Campo Endereço</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" class="form-control" id="cep" name="cep">
+                    </div>
+                    <div class="form-group">
+                        <label for="numerocasa">Número da Casa</label>
+                        <input type="text" class="form-control" id="numerocasa" name="numerocasa">
+                    </div>
+                    <div class="form-group">
+                        <label for="rua">Rua</label>
+                        <input type="text" class="form-control" id="rua" name="rua">
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro">
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" name="cidade">
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado (sigla)</label>
+                        <input type="text" class="form-control" id="estado" name="estado">
+                    </div>
                 </div>
             </div>
-
-            <div class="form-group">
-                <label for="menu">Benefício:</label>
-                <select class="form-control" id="menu" name="menu">
-                    <option value="Auxilio Doença">Auxílio Doença</option>
-                    <option value="Auxilio Doença Acidentario">Auxílio Doença Acidentário</option>
-                    <option value="Auxilio Acidente">Auxílio Acidente</option>
-                    <option value="Auxilio Acidente Acidentario">Auxílio Acidente Acidentário</option>
-                    <option value="Aposentadoria por Invalidez">Aposentadoria por Invalidez</option>
-                    <option value="Aposentadoria por Invalidez Acidentario">Aposentadoria por Invalidez Acidentário</option>
-                    <option value="Reabilitação Profissional">Reabilitação Profissional</option>
-                    <option value="Aposentadoria por Tempo de Contribuição">Aposentadoria por Tempo de Contribuição</option>
-                    <option value="Aposentadoria por Tempo de Contribuição por Deficiencia">Aposentadoria por Tempo de Contribuição por Deficiência</option>
-                    <option value="Aposentadoria Especial">Aposentadoria Especial</option>
-                    <option value="Aposentadoria por Idade">Aposentadoria por Idade</option>
-                    <option value="Revisão de Aposentadoria">Revisão de Aposentadoria</option>
-                </select>
+            <div class="card mb-3">
+                <div class="card-header">Campo Trabalho</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Empregado?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="empregado" name="empregado" onchange="toggleEmpregadoFields()">
+                            <label class="form-check-label" for="empregado">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="empresaField">
+                        <label for="nomeempresa">Nome da Empresa</label>
+                        <input type="text" class="form-control" id="nomeempresa" name="nomeempresa">
+                    </div>
+                    <div class="form-group" id="profissaoField">
+                        <label for="profissao">Profissão</label>
+                        <input type="text" class="form-control" id="profissao" name="profissao">
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="info">Informações:</label>
-                <textarea class="form-control" id="info" name="info" required></textarea>
+            <div class="card mb-3">
+                <div class="card-header">Informações Extras</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="informacoesextras">Informações Extras</label>
+                        <textarea class="form-control" id="informacoesextras" name="informacoesextras"></textarea>
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="declaracao" name="declaracao">
-                <label class="form-check-label" for="declaracao">Gerar Declaração de Endereço Eletrônico</label>
+            <div class="card mb-3">
+                <div class="card-header">Documentos a Gerar</div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="declaracaoEnderecoEletronico" name="declaracaoEnderecoEletronico">
+                        <label class="form-check-label" for="declaracaoEnderecoEletronico">
+                            Gerar Declaração de Endereço Eletrônico
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="declaracaoJusticaGratuita" name="declaracaoJusticaGratuita">
+                        <label class="form-check-label" for="declaracaoJusticaGratuita">
+                            Gerar Declaração de Justiça Gratuita
+                        </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="declaracaoResponsabilidade" name="declaracaoResponsabilidade">
+                      <label class="form-check-label" for="declaracaoResponsabilidade">
+                          Gerar Declaração de Responsabilidade
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="declaracaoBeneficio" name="declaracaoBeneficio">
+                      <label class="form-check-label" for="declaracaoBeneficio">
+                          Gerar Declaração de Benefício
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fichaDadosCliente" name="fichaDadosCliente">
+                        <label class="form-check-label" for="fichaDadosCliente">
+                            Gerar Ficha com os Dados do Cliente
+                        </label>
+                    </div>
+                </div>
             </div>
-
-            <button type="button" class="btn btn-primary" onclick="generatePDF()">Gerar PDF</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6-beta.15/jquery.inputmask.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.15/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
