@@ -141,7 +141,7 @@ function generateResponsabilidadePDF(data) {
     doc.text('DECLARAÇÃO', 105, 20, null, null, 'center');
     doc.setFontSize(11);
     doc.setFont('helvetica', 'normal');
-    const content = `${data.nome}, brasileiro, portador da Cédula de Identidade RG. nº ${data.rg} SSP/SP e inscrito no CPF/MF sob nº ${data.cpf}, residente e domiciliado na ${data.rua}, nº ${data.numerocasa}, ${data.bairro}, CEP ${data.cep}, em ${data.cidade}-${data.estado}, declaro para os devidos fins legais e de direito, que todos os documentos por mim entregues ao advogado desta causa são cópias autênticas e fieis aos originais, sob responsabilidade exclusivamente minha.`;
+    const content = `${data.nome.toUpperCase()}, brasileiro, portador da Cédula de Identidade RG. nº ${data.rg} SSP/SP e inscrito no CPF/MF sob nº ${data.cpf}, residente e domiciliado na ${data.rua}, nº ${data.numerocasa}, ${data.bairro}, CEP ${data.cep}, em ${data.cidade}-${data.estado}, declaro para os devidos fins legais e de direito, que todos os documentos por mim entregues ao advogado desta causa são cópias autênticas e fieis aos originais, sob responsabilidade exclusivamente minha.`;
     doc.autoTable({
         startY: 30,
         head: [['']],
@@ -171,7 +171,7 @@ function generateBeneficioPDF(data) {
     doc.text('DECLARAÇÃO', 105, 20, null, null, 'center');
     doc.setFontSize(11);
     doc.setFont('helvetica', 'normal');
-    const content = `${data.nome}, brasileiro, portador da Cédula de Identidade RG. nº ${data.rg} SSP/SP e inscrito no CPF/MF sob nº ${data.cpf}, residente e domiciliado na ${data.rua}, nº ${data.numerocasa}, ${data.bairro}, CEP ${data.cep}, em ${data.cidade}-${data.estado}, declaro para os devidos fins legais e de direito, que não existe propositura de nenhuma ação com o mesmo número de benefício indicado na inicial.`;
+    const content = `${data.nome.toUpperCase()}, brasileiro, portador da Cédula de Identidade RG. nº ${data.rg} SSP/SP e inscrito no CPF/MF sob nº ${data.cpf}, residente e domiciliado na ${data.rua}, nº ${data.numerocasa}, ${data.bairro}, CEP ${data.cep}, em ${data.cidade}-${data.estado}, declaro para os devidos fins legais e de direito, que não existe propositura de nenhuma ação com o mesmo número de benefício indicado na inicial.`;
     doc.autoTable({
         startY: 30,
         head: [['']],
